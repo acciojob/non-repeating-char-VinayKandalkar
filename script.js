@@ -1,5 +1,18 @@
 function firstNonRepeatedChar(str) {
- // Write your code here
-}
-const input = prompt("Enter a string");
-alert(firstNonRepeatedChar(input)); 
+ let obj = {}
+ for (let i = 0; i < str.length; i++) {
+	 if (obj[str[i]] !== undefined) {
+		 // obj["a"]
+		obj [str[i]] += 1;
+	 } else {
+		 obj[str[i]] = 1;
+	   } 
+	}
+	for (let i = 0; i < str.length; i++) {
+		if (obj[str[i]] == 1) {
+			return str[i];
+		}
+	}
+
+	return null;
+ }
